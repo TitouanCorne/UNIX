@@ -52,3 +52,23 @@ Le cours est disponible ici :  [Système et réseau](https://francoisbrucker.git
 ## 2. Se connecter à une machine distante via ssh <a id="section2"></a>
 
 `ssh` : protocole *Secure Shell* qui permet de se connecter à distance à un autre ordinateur (souvent un serveur) et d'y exécuter des commandes en ligne de commande.
+
+`ssh utilisateur@machineIP` est la syntaxe de base.
+
+Lorsqu'on utilise une telle requête, par exemple `tcorne@sas1.ec-m.fr`, un mot de passe est attendu afin d'ouvrir une connexion.
+
+Pour éviter de tapper à chaque fois son mot de passe dès qu'on établit une connexion ssh, il est préférable d'utiliser des clés SSH. Pour la gestion de nos clés, nous allons utiliser un SSH agent.
+
+Le SSH agent (ou `ssh-agent`) est un programme qui gère des clés SSH (généralement utilisées pour l'authentification sans mot de passe) et permet de conserver en mémoire ces clés privées pendant toute une session. Cela permet à l'utilisateur de ne pas avoir à entrer à chaque fois la passphrase associée à la clé privée chaque fois qu'il utilise une connexion SSH.
+
+`ssh-add -l` pour savoir si vous avez un agent ssh opérationnel.
+
+Si cette commande répond `Could not open a connection to your authentication agent.` c'est qu'il n'y a pas d'agent.
+
+`eval "$(ssh-agent -s)"` pour lancer l'agent (à réaliser à la connexion de chaque shell).
+
+Pour que l'agent soit lancé automatiquement à chaque fois que j'ouvre un terminal : `nano ~/.profile` puis ajouter la ligne `eval "$(ssh-agent -s)"` et sauvegarder.
+
+La liste des ordinateurs connus ainsi que leur clé publique (sur lesquels on s'est déjà connecté) est stockée dans le fichier : `~/.ssh/known_hosts`.
+
+La commande `ssh-keygen -lv` est utilisée pour afficher les empreintes numériques (fingerprints) des clés publiques SSH présentes dans un fichier d'une manière détaillée, avec un affichage visuel en ASCII (sous la forme d'un identicon ou visual hash). Cette option est utile pour vérifier ou comparer des clés SSH de manière visuelle et sécurisée.
