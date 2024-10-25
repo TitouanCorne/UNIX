@@ -1,6 +1,7 @@
 # Cours système Unix/Linux : les commandes utiles
 
 Le cours est disponible ici :  [Système et réseau](https://francoisbrucker.github.io/cours_informatique/cours/syst%C3%A8me-et-r%C3%A9seau/)
+Notes de cours de Loïck : [Notes Loïck](https://boxboxjason.github.io/do_it/cours/info/bases/linux)
 
 ## Table des matières
 
@@ -50,6 +51,10 @@ Le cours est disponible ici :  [Système et réseau](https://francoisbrucker.git
 `ps aux` (`a` pour montrer les processus lancés par tous les utilisateurs ; `u` pour afficher les infos détaillées comme l'utilisateur, l'utilisation de la mémoire et du CPU ; `x` pour afficher les processus qui n'ont pas de terminal comme les processus de fond).
 
 `ps -ejH` (`e` affiche tous les processus, `j` utilise le format 'jobs' pour lister les informations, `H` affiche la hiérarchie des processus permettant de voir les relations parent-enfant entre eux).
+
+Autres commandes : 
+
+![Commandes écrites par Loïck](./img/commandes-Loick.png)
 
 ## 2. Se connecter à une machine distante via ssh <a id="section2"></a>
 
