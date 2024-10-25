@@ -9,6 +9,8 @@ Le cours est disponible ici :  [Système et réseau](https://francoisbrucker.git
 
 ## 1. Pêle-mêle de commandes utiles <a id="section1"></a>
 
+`man [nom commande]` pour avoir toutes les informations concernant la commande passée en argument.
+
 ```cd path``` pour naviguer d'un emplacement à un autre.
 
 ```cd ..``` pour aller dans le répertoire racine.
@@ -72,3 +74,22 @@ Pour que l'agent soit lancé automatiquement à chaque fois que j'ouvre un termi
 La liste des ordinateurs connus ainsi que leur clé publique (sur lesquels on s'est déjà connecté) est stockée dans le fichier : `~/.ssh/known_hosts`.
 
 La commande `ssh-keygen -lv` est utilisée pour afficher les empreintes numériques (fingerprints) des clés publiques SSH présentes dans un fichier d'une manière détaillée, avec un affichage visuel en ASCII (sous la forme d'un identicon ou visual hash). Cette option est utile pour vérifier ou comparer des clés SSH de manière visuelle et sécurisée.
+
+ `ssh-add` pour ajouter une clé SSH privée à l'agent SSH, qui gère les clés et évite d'avoir à ressaisir la passphrase à chaque utilisation de cette clé.
+
+ `ssh-add -l` pour voir la liste des clés actuellement chargées dans l'agent SSH.
+
+![image - connexion SSH avec notre propre agent](./img/img-ConnexionSSH-Agent.png)
+
+`scp [option] fichier_source fichier_destination` pour copier un fichier vers un serveur et inversement (scp = Secure Copy Protocol).
+
+`who` affiche des informations sur les utilisateurs actuellement connectés au système.
+
+`tar xzvf numerologie.tgz` pour extraire le contenu d'un fichier d'archive compressé au format .tgz
+
+## 3. Les ports standards <a id="section3"></a>
+
+22 : port démon SSH
+53 : port DNS (Domain Name Server), protocole UDP ( User Datagram Protocol)
+80 : HTTP (Hypertext Transfer Protocol, protocole de transfert hypertexte)
+443 : port TCP/IP réservé au connexion Https
