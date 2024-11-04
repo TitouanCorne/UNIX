@@ -94,7 +94,7 @@ La commande `ssh-keygen -lv` est utilisée pour afficher les empreintes numériq
 
 ## 3. Les ports standards <a id="section3"></a>
 
-22 : port démon SSH
-53 : port DNS (Domain Name Server), protocole UDP ( User Datagram Protocol)
-80 : HTTP (Hypertext Transfer Protocol, protocole de transfert hypertexte)
-443 : port TCP/IP réservé au connexion Https
+- 22 : port démon SSH
+- 53 : port DNS (Domain Name Server), protocole UDP ( User Datagram Protocol)
+- 80 : HTTP (Hypertext Transfer Protocol, protocole de transfert hypertexte)
+- 443 : port TCP/IP réservé au connexion Https
